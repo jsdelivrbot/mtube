@@ -1,8 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import YTSearch from 'youtube-api-search'
+import ENV from '../config/env'
+
 import SearchBar from './components/search_bar'
 
-const API_KEY = process.env.YOU_TUBE_KEY
+const API_KEY = ENV['API_KEY']
+
+YTSearch({key: API_KEY , term: 'スノボ'}, function(data){ console.log(data) 
+})
 
 //Create new Component. This component should
 //produce some html.
